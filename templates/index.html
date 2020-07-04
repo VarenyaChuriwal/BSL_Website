@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  BSL Limited
+{% endblock %}
+
+{% block main %}
+    <div id = "video" class = "center">
+      <video width = "80%" height = "auto" id = "myvideo" muted autoplay loop>
+        <source src = "/static/images/bsl_video.mp4" type = "video/mp4">
+        Your browser does not support the video.
+      </video>
+      <script> document.getElementById('myvideo').play();  </script>
+    </div>
+
+    <div style = "padding-top: 1vw"></div>
+
+    <!-- MD and Chair message -->
+    <div id = "message" class = "message">
+      <img class = "m-img" src = "/static/images/Arun.png" alt = "Arun Churiwal" style = "float: right; padding-left: 10px;">
+      <p> Insert text</p>
+    </div>
+
+    <div style = "padding-top: 5vw"></div>
+
+    <div class = "message">
+      <img class = "m-img" src = "/static/images/Nivedan_Churiwal.jpg" alt = "Nivedan Churiwal" style = "float: left; padding-right: 10px;"/>
+      <p> Insert text</p>
+    </div>
+{% endblock %}

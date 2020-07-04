@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link href="/static/styles.css" rel="stylesheet" />
+
+    <link href="/static/favicon.ico" rel="icon" />
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Add Header -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg text-white navbar-dark"
+        style="background-color: #9b0707;"
+      >
+        <a class="navbar-brand" href="#" style="padding-left: 1vw;">
+          <img
+            style="border: 1px solid white;"
+            src="/static/images/BSL_Logo.jpeg"
+            width="50"
+            height="50"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        <span style="padding-left: 1vw;"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Home
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.index', _anchor='video') }}"
+                  >BSL Video</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.index', _anchor='message') }}"
+                  >Chairman and MD's message</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                About Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Promise</a>
+                <a class="dropdown-item" href="#">Vision</a>
+                <a class="dropdown-item" href="#">Leadership</a>
+                <a class="dropdown-item" href="#">Awards</a>
+                <a class="dropdown-item" href="#">Global Presence</a>
+                <a class="dropdown-item" href="#">Initiatives</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Our Businesses
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="#"
+                  id="suitingsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Suitings
+                </a>
+                <div class="dropdown-menu" aria-labelledby="suitingsDropdown">
+                  <div class="dropdown-header">BSL Range</div>
+                  <a class="dropdown-item" href="#">Fibre dyed suitings</a>
+                  <a class="dropdown-item" href="#">Piece dyed suitings</a>
+                  <a class="dropdown-item" href="#">Uniform Fabrics</a>
+                  <a class="dropdown-item" href="#">P/V Fibre dyed suitings</a>
+                  <a class="dropdown-item" href="#">Combos</a>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-header">Geoffrey Hammonds</div>
+                  <a class="dropdown-item" href="#"
+                    >Premium poly wool suitings</a
+                  >
+                  <a class="dropdown-item" href="#">Pur wool fabrics</a>
+                  <a class="dropdown-item" href="#">Wool cashmere fabrics</a>
+                  <a class="dropdown-item" href="#">Premium suit lengths</a>
+                </div>
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="#"
+                  id="FurnishingsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Furnishings
+                </a>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="FurnishingsDropdown"
+                >
+                  <a class="dropdown-item" href="#">Drapery</a>
+                  <a class="dropdown-item" href="#">Upholstery</a>
+                  <a class="dropdown-item" href="#">Maid Ups</a>
+                  <a class="dropdown-item" href="#">Luxury Silk Fabrics</a>
+                </div>
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="#"
+                  id="YarnsDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Yarns
+                </a>
+                <div class="dropdown-menu" aria-labelledby="YarnsDropdown">
+                  <a class="dropdown-item" href="#">PV Yarns</a>
+                  <a class="dropdown-item" href="#">PW</a>
+                  <a class="dropdown-item" href="#">Cashmere</a>
+                  <a class="dropdown-item" href="#">Luxury Silk Vortex</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/manufacturing"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Manufacturing
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.man', _anchor='factory') }}"
+                  >Factory</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.man', _anchor='spinning') }}"
+                  >Spinning</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.man', _anchor='weaving') }}"
+                  >Weaving</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.man', _anchor='processing') }}"
+                  >Processing</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.man', _anchor='quality') }}"
+                  >Quality Control</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Financials
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Code of Conduct</a>
+                <a class="dropdown-item" href="#">Shareholding Pattern</a>
+                <a class="dropdown-item" href="#">Annual Report</a>
+                <a class="dropdown-item" href="#">Financial Results</a>
+                <a class="dropdown-item" href="#">Financial Performance</a>
+                <a class="dropdown-item" href="#">Investors Correspondence</a>
+                <a class="dropdown-item" href="#">Compliance Report</a>
+                <a class="dropdown-item" href="#">Policy</a>
+                <a class="dropdown-item" href="#"
+                  >Unclaimed and Unpaid Dividend</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Disclosures</a>
+                <a class="dropdown-item" href="#">Notices</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Contact Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Head Office</a>
+                <a class="dropdown-item" href="#">Factory</a>
+                <a class="dropdown-item" href="#">Branch Offices</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div style="padding-top: 20px;"></div>
+
+    <main>
+      {% block main %}{%endblock %}
+    </main>
+
+    <div style="padding-top: 250px;"></div>
+
+    <div class="footer">
+      <ul>
+        <li class="inline">
+          <a class="link" href="#">Careers</a>
+        </li>
+        <li class="inline">
+          <a class="link" href="#">News &amp; Media</a>
+        </li>
+        <li class="inline">
+          <a class="link" href="#">Quick Links</a>
+        </li>
+        <li class="inline">
+          <a class="link" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
