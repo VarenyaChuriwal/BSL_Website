@@ -23,3 +23,7 @@ def index():
 @app.route("/manufacturing")
 def man():
     return render_template("manufacturing.html")
+
+@app.route("/business")
+def business():
+    return render_template("business.html")
