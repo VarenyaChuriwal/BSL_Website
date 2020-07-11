@@ -1,9 +1,59 @@
 {% extends "layout.html" %} {% block title %} BSL: Manufacturing {% endblock %}
 {% block main %}
 
-<h2 id="factory">Factory</h2>
+<h1 id="factory">Factory</h1>
 <div style="padding-top: 1vw; padding-bottom: 1vw;"></div>
-<div class="imgcenter">
+
+<div class="center static">
+  <div
+    id="carouselExampleControls"
+    class="carousel static slide"
+    data-ride="carousel"
+  >
+    <div class="carousel-inner static">
+      <div class="carousel-item active static">
+        <img
+          src="/static/images/DJI_0017-min.JPG"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item static">
+        <img
+          src="/static/images/DJI_0041-min.JPG"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item static">
+        <img
+          src="/static/images/DJI_0033-min.JPG"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!--<div class="imgcenter">
   <img src="/static/images/DJI_0017-min.JPG" class="gallery" />
   <img src="/static/images/DJI_0041-min.JPG" class="gallery" />
   <img src="/static/images/DJI_0033-min.JPG" class="gallery" />
@@ -24,6 +74,7 @@
     class="gallery"
   />
 </div>
+ -->
 <div style="padding-bottom: 1vw; padding-top: 10vw;"></div>
 
 <h2 id="spinning">Spinning</h2>
