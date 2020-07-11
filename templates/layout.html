@@ -8,6 +8,24 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -23,7 +41,7 @@
     <!-- Google Links -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=BioRhyme"
+      href="https://fonts.googleapis.com/css?family=VOGUE"
     />
     <link
       rel="stylesheet"
@@ -39,7 +57,7 @@
         class="navbar navbar-expand-lg text-white navbar-dark"
         style="background-color: #9b0707; position: fixed; width: 100%;"
       >
-        <a class="navbar-brand" href="#" style="padding-left: 1vw;">
+        <a class="navbar-brand" href="/" style="padding-left: 1vw;">
           <img
             style="border: 1px solid white;"
             src="/static/images/BSL_Logo.jpeg"
@@ -86,6 +104,11 @@
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='message') }}"
                   >Chairman and MD's message</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.index', _anchor='board') }}"
+                  >Board of Directors</a
                 >
               </div>
             </li>
@@ -190,17 +213,36 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Financials
+                Investors
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Code of Conduct</a>
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="static\PDF\CODE-OF-CONDUCT.pdf"
+                  >Code of Conduct</a
+                >
+                <a
+                  class="dropdown-item"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="static\PDF\Code-of-fair-Disclosure.pdf"
+                  >Code of Conduct for Procedures of Fair Disclosure of
+                  Unpublished Price Sensitive Information</a
+                >
+                <a class="dropdown-item" href="{{ url_for('.performance') }}"
+                  >Financial Performance</a
+                >
                 <a class="dropdown-item" href="#">Shareholding Pattern</a>
                 <a class="dropdown-item" href="#">Annual Report</a>
                 <a class="dropdown-item" href="#">Financial Results</a>
-                <a class="dropdown-item" href="#">Financial Performance</a>
-                <a class="dropdown-item" href="#">Investors Correspondence</a>
+                <a class="dropdown-item" href="/correspondence"
+                  >Investors Correspondence</a
+                >
                 <a class="dropdown-item" href="#">Compliance Report</a>
                 <a class="dropdown-item" href="#">Policy</a>
+                <a class="dropdown-item" href="#">Independent Directors</a>
                 <a class="dropdown-item" href="#"
                   >Unclaimed and Unpaid Dividend</a
                 >
@@ -256,23 +298,5 @@
         </li>
       </ul>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
