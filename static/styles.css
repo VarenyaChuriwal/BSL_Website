@@ -90,8 +90,7 @@
   grid-template-columns: 1fr 1fr;
   width: 75%;
   grid-auto-rows: 43vh;
-  grid-gap: 3vh 1vw;
-  object-fit: cover;
+  grid-gap: 2vh 1vw;
   /* justify-content: center; */
   /* margin: auto 1vw; */
 }
@@ -113,7 +112,7 @@
   padding-top: 1vh;
   height: 35vh;
 }
- */
+*/
 
 /* .static {
   position: static;
@@ -135,6 +134,10 @@
 .chosen .choose-item {
   list-style: none;
   display: none;
+  position: relative;
+  z-index: -1;
+  left: -2.3vw;
+  width: 103%;
 }
 
 .chosen .active {
@@ -168,6 +171,11 @@
 
 .ref-image:hover {
   cursor: pointer;
+}
+
+.ref-image {
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Texts */
