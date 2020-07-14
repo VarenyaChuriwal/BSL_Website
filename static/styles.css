@@ -132,12 +132,11 @@
   width: 75%;
 }
 .chosen .choose-item {
-  list-style: none;
   display: none;
-  position: relative;
+  /* position: relative;
   z-index: -1;
   left: -2.3vw;
-  width: 103%;
+  width: 103%; */
 }
 
 .chosen .active {
