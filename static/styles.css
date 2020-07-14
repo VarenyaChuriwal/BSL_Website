@@ -133,10 +133,6 @@
 }
 .chosen .choose-item {
   display: none;
-  /* position: relative;
-  z-index: -1;
-  left: -2.3vw;
-  width: 103%; */
 }
 
 .chosen .active {
@@ -164,6 +160,7 @@
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
+  z-index: -1;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
@@ -238,7 +235,7 @@ td {
     grid-auto-rows: 33.33vh;
   }
 
-  .spinning-text {
+  #spinning-text {
     grid-column: 1;
     grid-row: 3;
   }
