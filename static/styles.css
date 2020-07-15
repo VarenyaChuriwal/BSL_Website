@@ -60,7 +60,6 @@
 }
 
 .text1 {
-  /* min-height: 30vh; */
   width: 25vw;
   text-align: justify;
 }
@@ -91,41 +90,7 @@
   width: 75%;
   grid-auto-rows: 43vh;
   grid-gap: 2vh 1vw;
-  /* justify-content: center; */
-  /* margin: auto 1vw; */
 }
-/* Gallery  */
-
-/* .message {
-  height: 30vh;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: 8%;
-  margin-right: 8%;
-}
-
-.m-img {
-  width: auto;
-  border: 3px solid #505050;
-  padding-left: 0.7vw;
-  padding-right: 0.7vw;
-  padding-top: 1vh;
-  height: 35vh;
-}
-*/
-
-/* .static {
-  position: static;
-}
-
-.carousel {
-  width: 75%;
-  box-shadow: 0px 0px 30px 2px #000000;
-} */
-
-/* .gallery {
-  box-shadow: 0px 0px 30px 2px #580505;
-} */
 
 /* Picture gallery */
 .chosen {
@@ -197,6 +162,17 @@ h5 {
   text-align: center;
 }
 
+h4 {
+  text-align: center;
+}
+
+/* Business flowchart */
+
+.space-between {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Performance Table */
 table,
 th,
@@ -247,3 +223,35 @@ main img {
   /* constrain images on small screens */
   max-width: 100%;
 }
+/* Gallery  */
+
+/* .message {
+  height: 30vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.m-img {
+  width: auto;
+  border: 3px solid #505050;
+  padding-left: 0.7vw;
+  padding-right: 0.7vw;
+  padding-top: 1vh;
+  height: 35vh;
+}
+*/
+
+/* .static {
+  position: static;
+}
+
+.carousel {
+  width: 75%;
+  box-shadow: 0px 0px 30px 2px #000000;
+} */
+
+/* .gallery {
+  box-shadow: 0px 0px 30px 2px #580505;
+} */
