@@ -32,8 +32,41 @@ def business():
 
 @app.route("/shareholding")
 def shareholding():
-    return render_template("shareholding.html")
+    with os.scandir('static/PDF/shareholding') as files:
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            name = name.replace('-', ' ')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+            
+        length = len(file_path)
+        return render_template("shareholding.html", path = file_path, name = file_name, length = length)
 
+@app.route("/report")
+def report():
+    with os.scandir('static/PDF/annual_reports') as files:
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            # name = name.replace('-', ' ')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+            
+        length = len(file_path)
+        return render_template("annual_report.html", path = file_path, name = file_name, length = length)
 @app.route("/correspondence")
 def correspondence():
     return render_template("correspondence.html")

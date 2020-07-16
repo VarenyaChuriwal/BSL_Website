@@ -86,7 +86,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="/index"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -137,7 +137,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="/business"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -147,19 +147,28 @@
                 Our Businesses
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.business', _anchor='suitings') }}"
+                >
                   Suitings
                 </a>
                 <span class="disabled dropdown-item">BSL Range</span>
                 <span class="disabled dropdown-item">Geoffrey Hammonds</span>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.business', _anchor='furnishings') }}"
+                >
                   Furnishings
                 </a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="{{ url_for('.business', _anchor='yarns') }}"
+                >
                   Yarns
                 </a>
               </div>
@@ -232,11 +241,13 @@
                   >Code of Conduct for Procedures of Fair Disclosure of
                   Unpublished Price Sensitive Information</a
                 >
-                <a class="dropdown-item" href="{{ url_for('.performance') }}"
+                <a class="dropdown-item" href="/performance"
                   >Financial Performance</a
                 >
-                <a class="dropdown-item" href="#">Shareholding Pattern</a>
-                <a class="dropdown-item" href="#">Annual Report</a>
+                <a class="dropdown-item" href="/shareholding"
+                  >Shareholding Pattern</a
+                >
+                <a class="dropdown-item" href="/report">Annual Report</a>
                 <a class="dropdown-item" href="#">Financial Results</a>
                 <a class="dropdown-item" href="/correspondence"
                   >Investors Correspondence</a

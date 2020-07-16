@@ -120,12 +120,20 @@
 .collapse-button {
   cursor: pointer;
 }
+
+.collapse-button span:first-child {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
 .collapse-button .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
-  display: inline-block;
+  /* display: inline-block; */
   padding: 10px;
   z-index: -1;
+  margin-bottom: 3vh;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
@@ -182,7 +190,7 @@ td {
 /* Footer */
 
 .footer {
-  position: static;
+  position: absolute;
   bottom: 0;
   width: 100%;
   color: white;
