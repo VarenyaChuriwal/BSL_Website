@@ -36,7 +36,7 @@ def shareholding():
         filing = Filing(files)
         path = filing.path()
         name = filing.name()
-        length = len(file_path)
+        length = len(path)
         return render_template("shareholding.html", path = path, name = name, length = length)
 
 @app.route("/report")
@@ -45,7 +45,7 @@ def report():
         filing = Filing(files)
         path = filing.path()
         name = filing.name()    
-        length = len(file_path)
+        length = len(path)
         return render_template("annual_report.html", path = path, name = name, length = length)
 
 
