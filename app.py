@@ -33,40 +33,22 @@ def business():
 @app.route("/shareholding")
 def shareholding():
     with os.scandir('static/PDF/shareholding') as files:
-        file_path = []
-        file_name = []
-        for file in files:
-            file_path.append(file.path)
-            name = str(file.name)
-            name = name.replace('-', ' ')
-            name = name.replace('_', ' ')
-            name = name.replace('.pdf', '')
-            split = name.split()
-            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
-            capitalized_parts = " ".join(capitalized_parts)
-            file_name.append(capitalized_parts)
-            
+        filing = Filing(files)
+        path = filing.path()
+        name = filing.name()
         length = len(file_path)
-        return render_template("shareholding.html", path = file_path, name = file_name, length = length)
+        return render_template("shareholding.html", path = path, name = name, length = length)
 
 @app.route("/report")
 def report():
     with os.scandir('static/PDF/annual_reports') as files:
-        file_path = []
-        file_name = []
-        for file in files:
-            file_path.append(file.path)
-            name = str(file.name)
-            # name = name.replace('-', ' ')
-            name = name.replace('_', ' ')
-            name = name.replace('.pdf', '')
-            split = name.split()
-            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
-            capitalized_parts = " ".join(capitalized_parts)
-            file_name.append(capitalized_parts)
-            
+        filing = Filing(files)
+        path = filing.path()
+        name = filing.name()    
         length = len(file_path)
-        return render_template("annual_report.html", path = file_path, name = file_name, length = length)
+        return render_template("annual_report.html", path = path, name = name, length = length)
+
+
 @app.route("/correspondence")
 def correspondence():
     return render_template("correspondence.html")
@@ -86,3 +68,23 @@ def performance():
         headers = next(rows)
         return render_template("performance.html", rows=rows, length=length - 3, headers  = headers)
         
+class Filing:
+    def __init__(self, files):
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            # name = name.replace('-', ' ')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+        self.path = file_path
+        self.name = file_name
+    def path():
+        return self.path
+    def name():
+        return self.name
