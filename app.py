@@ -18,6 +18,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -33,20 +34,78 @@ def business():
 @app.route("/shareholding")
 def shareholding():
     with os.scandir('static/PDF/shareholding') as files:
-        filing = Filing(files)
-        path = filing.path()
-        name = filing.name()
-        length = len(path)
-        return render_template("shareholding.html", path = path, name = name, length = length)
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            # name = name.replace('-', ' ')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            name = name.replace('.PDF', '')
+            # name = name.replace ('.PDF')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+        length = len(file_path)
+        return render_template("shareholding.html", path = file_path, name = file_name, length = length)
+
+@app.route("/notice")
+def notice():
+    with os.scandir('static/PDF/notice') as files:
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            name = name.replace('-', '.')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            name = name.replace('.PDF', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+        length = len(file_path)
+        return render_template("notice.html", path = file_path, name = file_name, length = length)
+
+@app.route("/directors")
+def directors():
+    with os.scandir('static/PDF/independent_directors') as files:
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            # name = name.replace('-', '.')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            name = name.replace('.PDF', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+        length = len(file_path)
+        return render_template("directors.html", path = file_path, name = file_name, length = length)
 
 @app.route("/report")
 def report():
     with os.scandir('static/PDF/annual_reports') as files:
-        filing = Filing(files)
-        path = filing.path()
-        name = filing.name()    
-        length = len(path)
-        return render_template("annual_report.html", path = path, name = name, length = length)
+        file_path = []
+        file_name = []
+        for file in files:
+            file_path.append(file.path)
+            name = str(file.name)
+            # name = name.replace('-', ' ')
+            name = name.replace('_', ' ')
+            name = name.replace('.pdf', '')
+            split = name.split()
+            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
+            capitalized_parts = " ".join(capitalized_parts)
+            file_name.append(capitalized_parts)
+        length = len(file_path)
+        return render_template("annual_report.html", path = file_path, name = file_name, length = length)
 
 
 @app.route("/correspondence")
@@ -68,23 +127,3 @@ def performance():
         headers = next(rows)
         return render_template("performance.html", rows=rows, length=length - 3, headers  = headers)
         
-class Filing:
-    def __init__(self, files):
-        file_path = []
-        file_name = []
-        for file in files:
-            file_path.append(file.path)
-            name = str(file.name)
-            # name = name.replace('-', ' ')
-            name = name.replace('_', ' ')
-            name = name.replace('.pdf', '')
-            split = name.split()
-            capitalized_parts = [p.capitalize() if not p.isupper() else p for p in split]
-            capitalized_parts = " ".join(capitalized_parts)
-            file_name.append(capitalized_parts)
-        self.path = file_path
-        self.name = file_name
-    def path():
-        return self.path
-    def name():
-        return self.name

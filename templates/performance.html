@@ -1,9 +1,14 @@
 {% extends "layout.html" %} {% block title %} BSL: Financial Performance {%
 endblock %} {% block main %}
-<h1>Financial Performance</h1>
-<p class="text-center">Rs. in Crores</p>
+<h1 class="red">Financial Performance</h1>
+<p
+  class="text-center"
+  style="font-size: large; font-family: 'PT Serif', serif;"
+>
+  (Rupees in Crores)
+</p>
 <div class="center">
-  <table>
+  <table class="data-table">
     {% for i in range(length) %}
     <th>{{ headers[i] }}</th>
     {% endfor %} {% for row in rows %}

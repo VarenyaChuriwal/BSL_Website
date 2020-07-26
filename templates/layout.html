@@ -35,19 +35,24 @@
       crossorigin="anonymous"
     />
 
+    <!-- My CSS -->
     <link href="/static/styles.css" rel="stylesheet" />
 
-    <link href="/static/favicon.ico" rel="icon" />
-
     <!-- Google Links -->
+
     <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=PT+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=VOGUE"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Futura"
-    />
+    /> -->
 
     <title>{% block title %}{% endblock %}</title>
   </head>
@@ -123,15 +128,14 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                About Us
+                Company
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Promise</a>
+                <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="#">Vision</a>
-                <a class="dropdown-item" href="#">Leadership</a>
-                <a class="dropdown-item" href="#">Awards</a>
-                <a class="dropdown-item" href="#">Global Presence</a>
-                <a class="dropdown-item" href="#">Initiatives</a>
+                <a class="dropdown-item" href="#">Chairmen's Desk</a>
+                <a class="dropdown-item" href="#">Board of Directors</a>
+                <a class="dropdown-item" href="#">Committees</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -238,8 +242,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   href="static\PDF\Code-of-fair-Disclosure.pdf"
-                  >Code of Conduct for Procedures of Fair Disclosure of
-                  Unpublished Price Sensitive Information</a
+                  >Code of Conduct for Procedures of Fair Disclosure <br />
+                  of Unpublished Price Sensitive Information</a
                 >
                 <a class="dropdown-item" href="/performance"
                   >Financial Performance</a
@@ -254,13 +258,15 @@
                 >
                 <a class="dropdown-item" href="#">Compliance Report</a>
                 <a class="dropdown-item" href="#">Policy</a>
-                <a class="dropdown-item" href="#">Independent Directors</a>
+                <a class="dropdown-item" href="/directors"
+                  >Independent Directors</a
+                >
                 <a class="dropdown-item" href="#"
                   >Unclaimed and Unpaid Dividend</a
                 >
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Disclosures</a>
-                <a class="dropdown-item" href="#">Notices</a>
+                <a class="dropdown-item" href="/notice">Notices</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -292,7 +298,7 @@
       {% block main %}{%endblock %}
     </main>
 
-    <div style="padding-top: 250px;"></div>
+    <div style="padding-top: 5vh;"></div>
 
     <div class="footer">
       <ul>
