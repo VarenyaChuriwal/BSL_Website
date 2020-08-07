@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Activate collapsible
   document.querySelectorAll(".collapse-button").forEach((button) => {
     button.onclick = () => {
       const gallery = button.nextElementSibling;
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   });
 
+  // Choose picture to view
   document.querySelectorAll(".ref-image").forEach((image) => {
     image.onclick = () => {
       const display =
@@ -20,35 +22,51 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(focus).scrollIntoView();
     };
   });
+
+  // Navigate for BSL videos
+  const video = document.getElementById("myvideo");
+  document.addEventListener("click", () => {
+    video.play();
+  });
+  document.querySelectorAll(".video-nav-item").forEach((item) => {
+    item.onclick = () => {
+      document.querySelector(".nav-active").classList.remove("nav-active");
+      item.classList.add("nav-active");
+      var src = item.dataset.src;
+      video.src = src;
+    };
+  });
+
+  // Allow videos to play in sequence
+  video.onended = () => {
+    var active_item = document.querySelector(".nav-active");
+    var next_item = active_item.nextElementSibling;
+    if (next_item.id == "first-clone") {
+      next_item = document.getElementById("first-element");
+    }
+    active_item.classList.remove("nav-active");
+    next_item.classList.add("nav-active");
+    video.src = next_item.dataset.src;
+  };
+
+  // Intersection Observer for Landing page
+  const sliders = document.querySelectorAll(".slider");
+  const options = {
+    rootMargin: "-150px 0px -200px 0px",
+  };
+  appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        entry.target.classList.remove("appear");
+        // return;
+      } else {
+        entry.target.classList.add("appear");
+      }
+      // appearOnScroll.unobserve(entry.target);
+    });
+  }, options);
+
+  sliders.forEach((slider) => {
+    appearOnScroll.observe(slider);
+  });
 });
-
-// test = new Inter();
-// (function () {
-//   var elements;
-//   var windowHeight;
-
-//   function init() {
-//     elements = document.querySelectorAll(".hidden");
-//     windowHeight = window.innerHeight;
-//   }
-
-//   function checkPosition() {
-//     for (var i = 0; i < elements.length; i++) {
-//       var element = elements[i];
-//       var positionFromTop = elements[i].getBoundingClientRect().top;
-
-//       if (positionFromTop - windowHeight <= 0) {
-//         element.classList.add("fade-in-element");
-//         element.classList.remove("hidden");
-//       }
-//     }
-//   }
-
-//   window.addEventListener("scroll", checkPosition);
-//   window.addEventListener("resize", init);
-
-//   init();
-//   checkPosition();
-// })();
-
-// document.querySelector(".active").classList.toggle("active");

@@ -4,97 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-
     <script src="test.js"></script>
+    <style>
+      video {
+        width: 75%;
+        margin: auto;
+        display: block;
+        height: 100%;
+      }
+      /* .videos {
+        display: none;
+      }
+      .videos.active {
+      } */
+      .videoholder {
+        position: relative;
+        height: 85vh;
+      }
+      .video-nav {
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        transform: translate(-50%);
+        display: flex;
+      }
+
+      .video-nav-item:hover {
+        /* height: 6px; */
+        width: 40px;
+        opacity: 1;
+      }
+      .video-nav-item.nav-active {
+        width: 40px;
+        height: 6px;
+      }
+      .video-nav-item {
+        background-color: red;
+        height: 3px;
+        width: 30px;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: height, width linear 0.2s;
+        opacity: 0.7;
+      }
+    </style>
   </head>
   <body>
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide"
-      data-ride="carousel"
-    >
-      <ol class="carousel-indicators">
-        <li
-          data-target="#carouselExampleCaptions"
-          data-slide-to="0"
-          class="active"
-        ></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <video id="myvideo" muted autoplay loop>
-            <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
-            Your browser does not support the video.
-          </video>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <video id="myvideo" muted autoplay loop>
-            <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
-            Your browser does not support the video.
-          </video>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <video id="myvideo" muted autoplay loop>
-            <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
-            Your browser does not support the video.
-          </video>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </div>
-        </div>
+    <div class="videoholder">
+      <video class="videos active" id="myvideo" controls autoplay>
+        <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
+        Your browser does not support the video.
+      </video>
+      <div class="video-nav">
+        <div
+          id="first-element"
+          class="video-nav-item nav-active"
+          data-src="/static/images/BSL 60s C2C_v2.mp4"
+        ></div>
+        <div
+          class="video-nav-item"
+          data-src="/static/images/VID-20190516-WA0013.mp4"
+        ></div>
+        <div
+          class="video-nav-item"
+          data-src="/static/images/VID-20200725-WA0018.mp4"
+        ></div>
+        <div
+          class="video-nav-item"
+          data-src="/static/images/VID-20200728-WA0000.mp4"
+        ></div>
+        <div
+          id="first-clone"
+          data-src="/static/images/BSL 60s C2C_v2.mp4"
+        ></div>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleCaptions"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleCaptions"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <h4>
+        Welcome to BSL! Want to know more about us? Click the tabs above the
+        video to watch what BSL is all about!
+      </h4>
     </div>
   </body>
 </html>
+
+<!-- <video id="myvideo" class="videos" controls muted loop>
+    <source src="/static/images/VID-20190516-WA0013.mp4" type="video/mp4" />
+    Your browser does not support the video.
+  </video>
+  <video id="myvideo" class="videos" controls muted loop>
+    <source src="/static/images/VID-20200725-WA0018.mp4" type="video/mp4" />
+    Your browser does not support the video.
+  </video>
+  <video id="myvideo" class="videos" controls muted loop>
+    <source src="/static/images/VID-20200728-WA0000.mp4" type="video/mp4" />
+    Your browser does not support the video.
+  </video> -->

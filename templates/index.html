@@ -1,65 +1,124 @@
 {% extends "layout.html" %} {% block title %} BSL Limited {% endblock %} {%
 block main %}
-<div id="video" class="center">
-  <video id="myvideo" muted autoplay loop>
+<div id="video" class="center videoholder">
+  <video class="videos active" id="myvideo" controls autoplay>
     <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
     Your browser does not support the video.
   </video>
-  <script>
-    document.getElementById("myvideo").play();
-  </script>
+  <div class="video-nav">
+    <div
+      id="first-element"
+      class="video-nav-item nav-active"
+      data-src="/static/images/BSL 60s C2C_v2.mp4"
+    ></div>
+    <div
+      class="video-nav-item"
+      data-src="/static/images/VID-20190516-WA0013.mp4"
+    ></div>
+    <div
+      class="video-nav-item"
+      data-src="/static/images/VID-20200725-WA0018.mp4"
+    ></div>
+    <div
+      class="video-nav-item"
+      data-src="/static/images/VID-20200728-WA0000.mp4"
+    ></div>
+    <div id="first-clone" data-src="/static/images/BSL 60s C2C_v2.mp4"></div>
+  </div>
 </div>
+<div style="padding-bottom: 3vh;"></div>
+<h4>
+  Welcome to <span class="red">BSL</span>! Want to know more about us? <br />
+  Use the tabs at top of the video to watch what <span class="red">BSL</span> is
+  all about!
+</h4>
 
-<div style="padding-top: 10vw;"></div>
-
-<!-- MD and Chair message -->
-
-<h1 id="message" style="color: #9b0707;">FROM THE CHAIRMEN'S DESK</h1>
+<!-- <div style="padding-top: 10vw;"></div> -->
 
 <div style="padding-top: 5vw;"></div>
 
 <div class="center">
-  <div class="quotes">
-    <div class="image-holder" id="arun">
-      <img class="img2" src="/static/images/Arun.png" alt="Arun Churiwal" />
-    </div>
+  <div class="posters">
+    <img
+      class="slider from-left"
+      src="static\images\posters\post1.jpeg"
+      alt=""
+    />
 
-    <div class="image-holder right" id="nivedan">
-      <img
-        class="img2"
-        src="/static/images/Nivedan Churiwal (1).png"
-        alt="Nivedan
-    Churiwal"
-      />
-    </div>
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-right">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
 
-    <div class="text1">
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum sint
-        aliquid excepturi repellat magni nisi corrupti, sequi ut quasi cum animi
-        a accusamus nihil? Voluptates distinctio beatae eos, maxime
-        reprehenderit repudiandae omnis amet ad voluptas laborum! Eos officiis,
-        vero enim quasi iure accusantium nostrum odit quia, qui laudantium,
-        fugiat totam.
-      </p>
-    </div>
-    <div class="text1 right">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        quis commodi rerum dolorem? Ipsa aspernatur voluptate consectetur sed
-        aperiam neque porro voluptas provident exercitationem magni commodi
-        omnis ea accusantium dolorum, illo voluptatum enim totam accusamus,
-        perspiciatis soluta. Quo suscipit nulla temporibus eaque, vitae alias,
-        praesentium non perspiciatis unde animi id.
-      </p>
-    </div>
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-left">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
+
+    <img
+      class="slider from-right"
+      src="static\images\posters\post2.jpeg"
+      alt=""
+    />
+    <img
+      class="slider from-left"
+      src="static\images\posters\post3.jpeg"
+      alt=""
+    />
+
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-right">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
+
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-left">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
+
+    <img
+      class="slider from-right"
+      src="static\images\posters\post4.jpeg"
+      alt=""
+    />
+    <img
+      class="slider from-left"
+      src="static\images\posters\post5.jpeg"
+      alt=""
+    />
+
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-right">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
+
+    <h1 class="slider">Add header</h1>
+    <p class="slider from-left">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+    </p>
+
+    <img
+      class="slider from-right"
+      src="static\images\posters\post6.jpeg"
+      alt=""
+    />
   </div>
 </div>
-
+{% endblock %}
 <!-- Board of Directors -->
-<div style="padding-top: 5vw;"></div>
-
-<h1 class="red" id="board">Board of Directors</h1>
+<!-- <h1 class="red" id="board">Board of Directors</h1>
 <div style="padding-top: 2.5vw;"></div>
 
 <div class="center">
@@ -116,38 +175,80 @@ block main %}
       Bhilwara-311001 <br />
       (Rajasthan)
     </div>
+  </div>
+</div> -->
 
-    <!-- <div class="message">
-  <img
-  class="m-img"
-  src="/static/images/Arun.png"
-  alt="Arun Churiwal"
-  style="float: right; padding-left: 10px;"
-  />
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, sit,
-    sequi velit iusto dignissimos impedit natus facere nam deleniti doloribus
-    pariatur, eos alias delectus dolor qui modi distinctio? Eum, accusantium?
-  </p>
-</div>
-
+<!-- <div class="message">
+      <img
+      class="m-img"
+      src="/static/images/Arun.png"
+      alt="Arun Churiwal"
+      style="float: right; padding-left: 10px;"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, sit,
+        sequi velit iusto dignissimos impedit natus facere nam deleniti doloribus
+        pariatur, eos alias delectus dolor qui modi distinctio? Eum, accusantium?
+      </p>
+    </div>
+    
+    <div style="padding-top: 5vw;"></div>
+    
+    <div class="message">
+      <img
+      class="m-img"
+      src="/static/images/Nivedan Churiwal (1).png"
+      alt="Nivedan Churiwal"
+      style="float: left; margin-right: 10px;"
+      />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id omnis provident
+        suscipit nemo quia iste quaerat, nam nulla possimus quod rem eveniet
+        sapiente aliquid laudantium vitae rerum! Ratione cum veniam illo voluptatum
+        ad numquam et ex voluptate ullam architecto eaque quod incidunt, eligendi
+        magnam ut odio ducimus earum inventore reprehenderit?
+      </p>
+    </div>
+  -->
+<!-- MD and Chair message -->
+<!-- <h1 id="message" style="color: #9b0707;">FROM THE CHAIRMEN'S DESK</h1>
+  
 <div style="padding-top: 5vw;"></div>
 
-<div class="message">
-  <img
-    class="m-img"
-    src="/static/images/Nivedan Churiwal (1).png"
-    alt="Nivedan Churiwal"
-    style="float: left; margin-right: 10px;"
-  />
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id omnis provident
-    suscipit nemo quia iste quaerat, nam nulla possimus quod rem eveniet
-    sapiente aliquid laudantium vitae rerum! Ratione cum veniam illo voluptatum
-    ad numquam et ex voluptate ullam architecto eaque quod incidunt, eligendi
-    magnam ut odio ducimus earum inventore reprehenderit?
-  </p>
-</div>
- -->{% endblock %}
+<div class="center">
+  <div class="quotes">
+    <div class="image-holder" id="arun">
+      <img class="img2" src="/static/images/Arun.png" alt="Arun Churiwal" />
+    </div>
+    
+    <div class="image-holder right" id="nivedan">
+      <img
+      class="img2"
+      src="/static/images/Nivedan Churiwal (1).png"
+      alt="Nivedan
+      Churiwal"
+      />
+    </div>
+    
+    <div class="text1">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum sint
+        aliquid excepturi repellat magni nisi corrupti, sequi ut quasi cum animi
+        a accusamus nihil? Voluptates distinctio beatae eos, maxime
+        reprehenderit repudiandae omnis amet ad voluptas laborum! Eos officiis,
+        vero enim quasi iure accusantium nostrum odit quia, qui laudantium,
+        fugiat totam.
+      </p>
+    </div>
+    <div class="text1 right">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        quis commodi rerum dolorem? Ipsa aspernatur voluptate consectetur sed
+        aperiam neque porro voluptas provident exercitationem magni commodi
+        omnis ea accusantium dolorum, illo voluptatum enim totam accusamus,
+        perspiciatis soluta. Quo suscipit nulla temporibus eaque, vitae alias,
+        praesentium non perspiciatis unde animi id.
+      </p>
+    </div>
   </div>
-</div>
+</div> -->

@@ -37,6 +37,7 @@
 
     <!-- My CSS -->
     <link href="/static/styles.css" rel="stylesheet" />
+    <link rel="icon" href="static\favicon.ico" type="image/x-icon" />
 
     <!-- Google Links -->
 
@@ -65,7 +66,7 @@
       >
         <a class="navbar-brand" href="/" style="padding-left: 1vw;">
           <img
-            style="border: 1px solid white;"
+            style="border: 1px solid white; border-radius: 5px;"
             src="/static/images/BSL_Logo.jpeg"
             width="50"
             height="50"
@@ -106,7 +107,7 @@
                   href="{{ url_for('.index', _anchor='video') }}"
                   >BSL Video</a
                 >
-                <a
+                <!-- <a
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='message') }}"
                   >Chairman and MD's message</a
@@ -115,7 +116,7 @@
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='board') }}"
                   >Board of Directors</a
-                >
+                > -->
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -131,11 +132,11 @@
                 Company
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Vision</a>
-                <a class="dropdown-item" href="#">Chairmen's Desk</a>
-                <a class="dropdown-item" href="#">Board of Directors</a>
-                <a class="dropdown-item" href="#">Committees</a>
+                <a class="dropdown-item" href="/profile">Profile</a>
+                <a class="dropdown-item" href="/profile">Vision</a>
+                <a class="dropdown-item" href="/desk">Chairmen's and MD's Desk</a>
+                <a class="dropdown-item" href="/board">Board of Directors</a>
+                <a class="dropdown-item" href="/committees">Committees</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -252,20 +253,21 @@
                   >Shareholding Pattern</a
                 >
                 <a class="dropdown-item" href="/report">Annual Report</a>
-                <a class="dropdown-item" href="#">Financial Results</a>
+                <a class="dropdown-item" href="/results">Financial Results</a>
                 <a class="dropdown-item" href="/correspondence"
                   >Investors Correspondence</a
                 >
-                <a class="dropdown-item" href="#">Compliance Report</a>
-                <a class="dropdown-item" href="#">Policy</a>
+                <a class="dropdown-item" href="/compliance">Compliance Report</a>
+                <a class="dropdown-item" href="/policy">Policy</a>
+                <a class="dropdown-item" href="/credit">Credit Rating</a>
                 <a class="dropdown-item" href="/directors"
                   >Independent Directors</a
                 >
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="/dividend"
                   >Unclaimed and Unpaid Dividend</a
                 >
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Disclosures</a>
+                <a class="dropdown-item" href="/disclosure">Disclosures</a>
                 <a class="dropdown-item" href="/notice">Notices</a>
               </div>
             </li>
@@ -282,9 +284,9 @@
                 Contact Us
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Head Office</a>
-                <a class="dropdown-item" href="#">Factory</a>
-                <a class="dropdown-item" href="#">Branch Offices</a>
+                <a class="dropdown-item" href="/contact">Contact Details</a>
+                <!-- <a class="dropdown-item" href="/contact">Factory</a> -->
+                <a class="dropdown-item" href="/contact">Enquiries</a>
               </div>
             </li>
           </ul>
@@ -300,21 +302,27 @@
 
     <div style="padding-top: 5vh;"></div>
 
-    <div class="footer">
-      <ul>
-        <li class="inline">
-          <a class="link" href="#">Careers</a>
-        </li>
-        <li class="inline">
-          <a class="link" href="#">News &amp; Media</a>
-        </li>
-        <li class="inline">
-          <a class="link" href="#">Quick Links</a>
-        </li>
-        <li class="inline">
-          <a class="link" href="#">Blog</a>
-        </li>
-      </ul>
-    </div>
+    <div class="footer-top">
+      <b> Head office: </b>BSL Limited, MANDAWA SHIKAR, 151, Sarat Bose Road, Kolkata (WB)-700026, INDIA <br>
+      <b>Registered Office: </b>BSL Limited, 26 Industrial Area, Gandhi Nagar, Bhilwara-311001, Rajasthan, INDIA <br>
+<b>  Phone :</b> 01482-246801-06, Fax : 01482-246807/246157, bail : exports@bslltd.com <br>
+<b>  Corporate Identification Number (CIN) : </b>L24302RJ1970PLC002266 <br>
+<b> Plant:</b> BSL Limited, Post Box: 16, Chittorgarh Road Mandpam, Bhilwara (RAJ), INDIA
+</div>
+<div class="footer-bottom">
+  <span>
+    &#169 2020 BSL Limited. All Rights Reserved.
+  </span>
+  <span>
+    Connect with us on social media:
+    <a href="https://www.facebook.com/BSLSuitings" 
+    target="_blank"
+    rel="noopener noreferrer">
+      <img id = 'flogo' src="static\images\FACEBOOK.png" alt="Facebook Link" />
+    </a>
+  </span>
+</div>
+<div style="padding-bottom: 1vh;"></div>
   </body>
-</html>
+  </html>
+  

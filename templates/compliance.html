@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block title %} BSL:Compliance Reports {% endblock
+%} {% block main %}
+<h1>Compliance Reports</h1>
+<div style="padding-top: 5vh;"></div>
+
+<table class="downloadable-files">
+  {% for i in range(length)%}
+  <tr>
+    <td>
+      <a target="_blank" rel="noopener noreferrer" href="{{path[i]}}">
+        {{ name[i]}}</a
+      >
+    </td>
+    <td>
+      <a href="{{path[i]}}" download>
+        <img class="download-arrow" src="static\images\download_button.png" />
+      </a>
+    </td>
+  </tr>
+  {% endfor%}
+</table>
+<div style="padding-bottom: 11vh;"></div>
+{% endblock %}
