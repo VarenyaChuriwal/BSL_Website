@@ -462,6 +462,10 @@ h6 {
     grid-row: 3;
   }
 
+  .dropdown-item {
+    white-space: normal;
+  }
+
   /* Video */
   #myvideo {
     width: 96%;
