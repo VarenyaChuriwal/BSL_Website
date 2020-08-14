@@ -25,9 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Navigate for BSL videos
   const video = document.getElementById("myvideo");
-  document.addEventListener("click", () => {
-    video.play();
-  });
+  if (video) {
+    document.addEventListener("click", () => {
+      video.play();
+    });
+  }
   document.querySelectorAll(".video-nav-item").forEach((item) => {
     item.onclick = () => {
       document.querySelector(".nav-active").classList.remove("nav-active");
@@ -36,18 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
       video.src = src;
     };
   });
-
-  // Allow videos to play in sequence
-  video.onended = () => {
-    var active_item = document.querySelector(".nav-active");
-    var next_item = active_item.nextElementSibling;
-    if (next_item.id == "first-clone") {
-      next_item = document.getElementById("first-element");
-    }
-    active_item.classList.remove("nav-active");
-    next_item.classList.add("nav-active");
-    video.src = next_item.dataset.src;
-  };
 
   // Intersection Observer for Landing page
   const sliders = document.querySelectorAll(".slider");
@@ -58,15 +48,66 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         entry.target.classList.remove("appear");
-        // return;
       } else {
         entry.target.classList.add("appear");
       }
-      // appearOnScroll.unobserve(entry.target);
     });
   }, options);
 
   sliders.forEach((slider) => {
     appearOnScroll.observe(slider);
   });
+
+  // Lazyload images
+  const images = document.querySelectorAll("[data-source]");
+  const ImageOptions = {
+    rootMargin: "100px 0px 100px 0px",
+  };
+  const lazyload = new IntersectionObserver((entries, lazyload) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        let source = entry.target.getAttribute("data-source");
+        entry.target.src = source;
+        lazyload.unobserve(entry.target);
+      }
+    });
+  }, ImageOptions);
+
+  images.forEach((image) => {
+    lazyload.observe(image);
+  });
+
+  // Lazyload reference images
+  const image_referrer = document.querySelectorAll("[data-RefSource]");
+  const ref_load = new IntersectionObserver((entries, ref_load) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        let style = entry.target.getAttribute("data-RefSource");
+        entry.target.style.backgroundImage = `url(${style})`;
+        ref_load.unobserve(entry.target);
+      }
+    });
+  }, ImageOptions);
+
+  image_referrer.forEach((image) => {
+    ref_load.observe(image);
+  });
+
+  // Allow videos to play in sequence
+  if (video) {
+    video.onended = () => {
+      var active_item = document.querySelector(".nav-active");
+      var next_item = active_item.nextElementSibling;
+      if (next_item.id == "first-clone") {
+        next_item = document.getElementById("first-element");
+      }
+      active_item.classList.remove("nav-active");
+      next_item.classList.add("nav-active");
+      video.src = next_item.dataset.src;
+    };
+  }
 });

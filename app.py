@@ -10,6 +10,7 @@ class file_provider():
         with os.scandir('static/PDF/'+directory) as files:
             file_path = []
             file_name = []
+            files = sorted(files, key=lambda f: f.name)
             for file in files:
                 file_path.append(file.path)
                 name = str(file.name)
