@@ -1,14 +1,19 @@
 /* Body */
-main {
-  font-family: "PT Serif", serif;
+body {
+  font-family: "Merriweather", serif;
   scroll-behavior: smooth;
 }
+
 .red {
   color: #9b0707;
 }
 /* Header */
 nav {
   z-index: 3;
+  background-color: white;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 1px 40px #9b0707;
 }
 .dropdown-menu.show {
   max-width: 92vw;
@@ -17,13 +22,18 @@ nav {
 .nav-link,
 .nav-link:hover {
   color: #ffffff;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
   text-decoration: none;
   text-transform: uppercase;
 }
 
+.navbar-light .navbar-toggler {
+  color: #9b0707;
+  border-color: #9b0707;
+}
+
 .nav-link {
-  color: white !important;
+  color: #9b0707 !important;
 }
 
 .dropdown-item:hover {
@@ -70,7 +80,8 @@ nav {
 
 #myvideo {
   box-shadow: 0px 0px 30px 2px #580505;
-  width: 73%;
+  width: 90%;
+  /* width: 73%; */
   height: auto;
   /* z-index: -3; */
 }
@@ -148,7 +159,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 75%;
-  grid-template-rows: repeat(6, 0.4fr 1fr);
+  grid-template-rows: repeat(4, 0.4fr 1fr);
   grid-auto-flow: dense;
   /* grid-row-gap: 20vh; */
   overflow-x: hidden;
@@ -162,12 +173,17 @@ nav {
 .posters h1 {
   padding-top: 3vh;
   align-self: start;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .posters p {
   grid-column: span 2;
   padding-left: 2vw;
   padding-right: 2vw;
+  /* padding-top: 5vh; */
+  font-size: x-large;
+  text-align: center;
 }
 
 .posters p:nth-of-type(odd),
@@ -212,6 +228,7 @@ h1:nth-of-type(even) {
 .chosen {
   /* height: 40vh; */
   width: 75%;
+  box-shadow: 0px 0px 20px 2px #330404;
   /* height: 90vh; */
   /* background-color: #f5f5f5; */
   /* height: 80vh; */
@@ -243,7 +260,7 @@ h1:nth-of-type(even) {
   font-size: large;
   font-weight: bold;
   margin-top: 1vh;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
   margin-bottom: 1vh;
 }
 
@@ -268,8 +285,11 @@ h1:nth-of-type(even) {
 }
 
 .ref-image {
-  background-size: cover;
+  background-size: 100% 100%;
+  /* background-origin: padding-box; */
   background-repeat: no-repeat;
+  /* padding-left: 50px; */
+  border: solid #9b0707 3px;
 }
 
 /* Texts */
@@ -283,7 +303,7 @@ h1:nth-of-type(even) {
 h1 {
   color: #9b0707;
   text-align: center;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
   font-weight: bold;
   font-stretch: extra-condensed;
   text-transform: uppercase;
@@ -292,7 +312,7 @@ h1 {
 
 h5 {
   color: #505050;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
 }
 
 .text-center {
@@ -307,11 +327,11 @@ h5 {
 
 h4 {
   text-align: center;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
 }
 
 h6 {
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
 }
 
 /* Business flowchart */
@@ -350,7 +370,7 @@ h6 {
   width: 98%;
   margin: auto;
   /* height: 100%; */
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
 }
 
 .data-table tr:nth-child(even) {
@@ -451,7 +471,7 @@ h6 {
 
 /* Phone view */
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 800px) {
   .imgcenter {
     grid-template-columns: 1fr;
     grid-auto-rows: 33.33vh;
@@ -531,7 +551,7 @@ h6 {
     display: grid;
     grid-template-columns: 1fr;
     width: 75%;
-    grid-template-rows: repeat(6, 0.15fr 0.5fr 1fr);
+    grid-template-rows: repeat(4, 0.15fr 0.25fr 1fr);
     /* grid-auto-flow: dense; */
     /* grid-row-gap: 20vh; */
     overflow-x: hidden;
@@ -539,7 +559,7 @@ h6 {
 
   .posters img {
     grid-row: span 1;
-    margin-bottom: 1vh;
+    margin-bottom: 10vh;
   }
 
   .posters h1 {
@@ -608,7 +628,7 @@ h6 {
     font-size: x-small;
     font-weight: bold;
     margin-top: 1vh;
-    font-family: "PT Serif", serif;
+    /* font-family: "PT Serif", serif; */
     margin-bottom: 1vh;
   }
 
@@ -629,7 +649,7 @@ h6 {
     /* border: solid black 3px; */
     width: 98%;
     font-size: 5px;
-    font-family: "PT Serif", serif;
+    /* font-family: "PT Serif", serif; */
   }
 
   .data-table tr:nth-child(even) {

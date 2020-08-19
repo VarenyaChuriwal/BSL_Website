@@ -42,18 +42,21 @@
     <!-- Google Links -->
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=PT+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=PT+Serif&display=swap" 
       rel="stylesheet"
     />
 
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Merriweather&display=swap" 
+    rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
     <!-- Add Header -->
     <header>
       <nav
-        class="navbar navbar-expand-lg text-white navbar-dark"
-        style="background-color: #9b0707; position: fixed; width: 100%;"
+        class="navbar navbar-expand-lg text-white navbar-light"
+        style="  position: fixed;
+        "
       >
         <a class="navbar-brand" href="/" style="padding-left: 1vw;">
           <img
@@ -125,7 +128,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/profile">Profile</a>
                 <a class="dropdown-item" href="/profile">Vision</a>
-                <a class="dropdown-item" href="/desk">Chairmen's and MD's Desk</a>
+                <a class="dropdown-item" href="/desk">Chairman's and MD's Desk</a>
                 <a class="dropdown-item" href="/board">Board of Directors</a>
                 <a class="dropdown-item" href="/committees">Committees</a>
               </div>
@@ -285,7 +288,7 @@
       </nav>
     </header>
 
-    <div style="padding-top: 16vh;"></div>
+    <div style="padding-top: 10vh;"></div>
 
     <main>
       {% block main %}{%endblock %}

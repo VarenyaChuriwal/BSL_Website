@@ -17,19 +17,37 @@ document.addEventListener("DOMContentLoaded", function () {
           .previousElementSibling.firstElementChild;
       display.getElementsByClassName("active")[0].classList.toggle("active");
       const ref = image.dataset.reference;
-      document.getElementById(ref).classList.toggle("active");
+      const referred_image = document.getElementById(ref);
+      referred_image.classList.toggle("active");
+      if (!referred_image.src) {
+        referred_image.src = referred_image.dataset.source;
+      }
+
       const focus = display.dataset.display;
       document.getElementById(focus).scrollIntoView();
     };
   });
 
+  // Create slideshow for images
+
+  if (document.querySelector(".chosen")) {
+    setInterval(function () {
+      const current_image = document
+        .querySelectorAll(".choose-item.active")
+        .forEach((current_image) => {
+          var next_image = current_image.nextElementSibling;
+          current_image.classList.remove("active");
+          if (next_image.id == "first_clone") {
+            const first_child = next_image.parentElement.firstElementChild;
+            next_image = first_child;
+          }
+          next_image.classList.add("active");
+        });
+    }, 10000);
+  }
+
   // Navigate for BSL videos
   const video = document.getElementById("myvideo");
-  if (video) {
-    document.addEventListener("click", () => {
-      video.play();
-    });
-  }
   document.querySelectorAll(".video-nav-item").forEach((item) => {
     item.onclick = () => {
       document.querySelector(".nav-active").classList.remove("nav-active");
@@ -39,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   });
 
-  // Intersection Observer for Landing page
+  //Fade-in landing page
   const sliders = document.querySelectorAll(".slider");
   const options = {
     rootMargin: "-150px 0px -200px 0px",
@@ -58,8 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(slider);
   });
 
-  // Lazyload images
-  const images = document.querySelectorAll("[data-source]");
+  // Lazyload landing page images
+  const images = document.querySelectorAll("[data-landsource]");
   const ImageOptions = {
     rootMargin: "100px 0px 100px 0px",
   };
@@ -68,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!entry.isIntersecting) {
         return;
       } else {
-        let source = entry.target.getAttribute("data-source");
+        let source = entry.target.getAttribute("data-landsource");
         entry.target.src = source;
         lazyload.unobserve(entry.target);
       }
@@ -97,6 +115,20 @@ document.addEventListener("DOMContentLoaded", function () {
     ref_load.observe(image);
   });
 
+  // Lazyload gallery images
+  document.querySelectorAll(".chosen").forEach((gallery_holder) => {
+    setInterval(() => {
+      const current_gallery = gallery_holder.querySelector(".active");
+      let next_gallery = current_gallery.nextElementSibling;
+      if (!next_gallery.hasAttribute("data-source")) {
+        next_gallery = next_gallery.parentElement.firstElementChild;
+      }
+      if (!next_gallery.src) {
+        next_gallery.src = next_gallery.dataset.source;
+      }
+    }, 1000);
+  });
+
   // Allow videos to play in sequence
   if (video) {
     video.onended = () => {
@@ -111,3 +143,35 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 });
+
+// const slideshow_options = {
+//   rootMargin: "-300px 0px -300px 0px",
+//   threshold: 0.75,
+// };
+// const slideshow = new IntersectionObserver((entries, slideshow) => {
+//   entries.forEach((entry) => {
+//     console.log(entry);
+//     if (!entry.isIntersecting) {
+//       return;
+//     } else {
+//       // console.log(entry.target);
+//       setInterval(function () {
+//         const current_image = entry.target.querySelector(".active");
+//         // .forEach((current_image) => {
+//         var next_image = current_image.nextElementSibling;
+//         current_image.classList.remove("active");
+//         if (next_image.id == "first_clone") {
+//           const first_child = next_image.parentElement.firstElementChild;
+//           next_image = first_child;
+//         }
+//         next_image.classList.add("active");
+//         // });
+//       }, 50000);
+//     }
+//   });
+// }, slideshow_options);
+
+// document.querySelectorAll(".chosen").forEach((image) => {
+//   slideshow.observe(image);
+//   // console.log(image);
+// });

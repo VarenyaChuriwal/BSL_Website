@@ -1,15 +1,15 @@
 {% extends "layout.html" %} {% block title %} BSL Limited {% endblock %} {%
 block main %}
 <div id="video" class="center videoholder">
-  <video class="videos active" id="myvideo" controls autoplay>
-    <source src="/static/images/BSL 60s C2C_v2.mp4" type="video/mp4" />
+  <video class="videos active" id="myvideo" controls autoplay muted>
+    <source src="/static/images/VID-20200728-WA0000.mp4" type="video/mp4" />
     Your browser does not support the video.
   </video>
   <div class="video-nav">
     <div
       id="first-element"
       class="video-nav-item nav-active"
-      data-src="/static/images/BSL 60s C2C_v2.mp4"
+      data-src="/static/images/VID-20200728-WA0000.mp4"
     ></div>
     <div
       class="video-nav-item"
@@ -17,21 +17,26 @@ block main %}
     ></div>
     <div
       class="video-nav-item"
-      data-src="/static/images/VID-20200725-WA0018.mp4"
+      data-src="/static/images/BSL_30s_C2C_v2.mp4"
     ></div>
     <div
       class="video-nav-item"
-      data-src="/static/images/VID-20200728-WA0000.mp4"
+      data-src="/static/images/VID-20200725-WA0018.mp4"
     ></div>
-    <div id="first-clone" data-src="/static/images/BSL 60s C2C_v2.mp4"></div>
+    <div id="first-clone"></div>
   </div>
 </div>
 <div style="padding-bottom: 3vh;"></div>
-<h4>
-  Welcome to <span class="red">BSL</span>! Want to know more about us? <br />
-  Use the tabs at top of the video to watch what <span class="red">BSL</span> is
-  all about!
+<h4 style="width: 85%; margin: auto;">
+  <p>Welcome to <span class="red">BSL</span>! <br /></p>
+
+  Pioneers in the fabric industry for last 70 years, we have created and curated
+  the right fabric for your needs. Wear your elegance with style.
 </h4>
+
+<!-- Want to know more about us? <br />
+  Use the tabs at top of the video to watch what <span class="red">BSL</span> is
+  all about! -->
 
 <!-- <div style="padding-top: 10vw;"></div> -->
 
@@ -41,79 +46,76 @@ block main %}
   <div class="posters">
     <img
       class="slider from-left"
-      data-source="static\images\posters\post1.jpeg"
+      data-landsource="static\images\posters\post1.jpeg"
       alt=""
     />
 
-    <h1 class="slider">Add header</h1>
+    <h1 class="slider">WHEN CLASSIC MEETS TRENDY</h1>
     <p class="slider from-right">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+      Flamboyance tailored to perfection with the intricately designed
+      indo-western fabrics.
     </p>
 
-    <h1 class="slider">Add header</h1>
+    <h1 class="slider">STYLE IT LIKE YOU OWN IT</h1>
     <p class="slider from-left">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+      Contemporary yet rooted in timeless traditions. Suave kurtas fabrics for
+      the avant-gardes.
     </p>
 
     <img
       class="slider from-right"
-      data-source="static\images\posters\post2.jpeg"
+      data-landsource="static\images\posters\post2.jpeg"
       alt=""
     />
     <img
       class="slider from-left"
-      data-source="static\images\posters\post3.jpeg"
+      data-landsource="static\images\posters\post3.jpeg"
       alt=""
     />
 
-    <h1 class="slider">Add header</h1>
+    <h1 class="slider">SARTORIALLY ELEGANT FOR REVELRY</h1>
     <p class="slider from-right">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+      Passion suiting fabrics for the tasteful with a dash of glamour and a
+      pinch of panache.
     </p>
 
-    <h1 class="slider">Add header</h1>
+    <h1 class="slider">A STYLE FOR EVERY STORY</h1>
     <p class="slider from-left">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+      For the unconventional and the unbending, who expresses their attitude
+      through their attire.
     </p>
 
     <img
       class="slider from-right"
-      data-source="static\images\posters\post4.jpeg"
-      alt=""
-    />
-    <img
-      class="slider from-left"
-      data-source="static\images\posters\post5.jpeg"
-      alt=""
-    />
-
-    <h1 class="slider">Add header</h1>
-    <p class="slider from-right">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
-    </p>
-
-    <h1 class="slider">Add header</h1>
-    <p class="slider from-left">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
-      laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
-      dolorum cumque minus praesentium asperiores illo, dolore ipsam!
-    </p>
-
-    <img
-      class="slider from-right"
-      data-source="static\images\posters\post6.jpeg"
+      data-landsource="static\images\posters\post4.jpeg"
       alt=""
     />
   </div>
 </div>
 {% endblock %}
+
+<!-- <img
+  class="slider from-left"
+  data-source="static\images\posters\post5.jpeg"
+  alt=""
+/>
+
+<h1 class="slider">Add header</h1>
+<p class="slider from-right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+  laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+  dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+</p>
+
+<h1 class="slider">Add header</h1>
+<p class="slider from-left">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam laudantium
+  laboriosam excepturi vero, reprehenderit repellat blanditiis, aliquid
+  dolorum cumque minus praesentium asperiores illo, dolore ipsam!
+</p>
+
+<img
+  class="slider from-right"
+  data-source="static\images\posters\post6.jpeg"
+  alt=""
+/> -->
