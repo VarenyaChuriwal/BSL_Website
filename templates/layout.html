@@ -85,23 +85,23 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
-                href="/index"
+                class="nav-link"
+                href="/"
                 id="navbarDropdown"
                 role="button"
-                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
+                >
+                <!-- data-toggle="dropdown" -->
                 Home
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='video') }}"
                   >BSL Video</a
                 >
-                <!-- <a
+                <a
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='message') }}"
                   >Chairman and MD's message</a
@@ -110,8 +110,8 @@
                   class="dropdown-item"
                   href="{{ url_for('.index', _anchor='board') }}"
                   >Board of Directors</a
-                > -->
-              </div>
+                >
+              </div> -->
             </li>
             <li class="nav-item dropdown">
               <a
@@ -267,28 +267,28 @@
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
+                class="nav-link"
+                href="/contact"
                 id="navbarDropdown"
                 role="button"
-                data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
+                >
+                <!-- data-toggle="dropdown" -->
                 Contact Us
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/contact">Contact Details</a>
-                <!-- <a class="dropdown-item" href="/contact">Factory</a> -->
+                <a class="dropdown-item" href="/contact">Factory</a>
                 <a class="dropdown-item" href="/contact">Enquiries</a>
-              </div>
+              </div> -->
             </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <div style="padding-top: 10vh;"></div>
+    <div style="padding-top: 16vh;"></div>
 
     <main>
       {% block main %}{%endblock %}

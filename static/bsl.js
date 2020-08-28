@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           next_image.classList.add("active");
         });
-    }, 10000);
+    }, 5000);
   }
 
   // Navigate for BSL videos
@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lazyload landing page images
   const images = document.querySelectorAll("[data-landsource]");
   const ImageOptions = {
-    rootMargin: "100px 0px 100px 0px",
+    rootMargin: "200px 0px 200px 0px",
+    threshold: 0.4,
   };
   const lazyload = new IntersectionObserver((entries, lazyload) => {
     entries.forEach((entry) => {
