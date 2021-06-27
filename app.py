@@ -180,12 +180,12 @@ def contact():
 
 @app.route("/performance")
 def performance():
-    with open("static/Financial results.csv", "r") as csvfile:
+    with open("static/Financial_results.csv", "r") as csvfile:
         rows = csv.reader(csvfile)
         for row in rows:
             length = len(row)
             break
         csvfile.seek(0)
         headers = next(rows)
-        return render_template("performance.html", rows=rows, length=length - 3, headers  = headers)
+        return render_template("performance.html", rows=rows, length=length, headers  = headers)
         

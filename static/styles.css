@@ -17,13 +17,19 @@ nav {
 }
 .dropdown-menu.show {
   max-width: 92vw;
+  /* display: none; */
+}
+
+.dropdown:hover .dropdown-menu {
+  /*Display dropdown on hover */
+  display: block;
 }
 
 .nav-link,
 .nav-link:hover {
-  color: #ffffff;
+  /* color: #ffffff; */
   /* font-family: "PT Serif", serif; */
-  text-decoration: none;
+  /* text-decoration: none; */
   text-transform: uppercase;
 }
 
@@ -34,6 +40,7 @@ nav {
 
 .nav-link {
   color: #9b0707 !important;
+  font-size: small;
 }
 
 .dropdown-item:hover {
