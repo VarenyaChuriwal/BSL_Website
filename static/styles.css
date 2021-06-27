@@ -370,6 +370,7 @@ h6 {
   /* border: solid black 3px; */
   width: 98%;
   margin: auto;
+  /* overflow-x: scroll; */
   /* height: 100%; */
   /* font-family: "PT Serif", serif; */
 }
@@ -449,9 +450,26 @@ h6 {
   flex-direction: row;
 }
 
+#contact-details table tr td:nth-of-type(2) {
+  text-align: center;
+  padding-top: 1.5vh;
+}
+#contact-details table {
+  width: 50vw;
+  margin-left: 4vw;
+}
+#contact-details table tr td {
+  align-items: start;
+  padding-left: 3vw;
+  padding-bottom: 3vh;
+  border-bottom: black 1px solid;
+}
+
 /* Footer */
 
 .footer-top {
+  letter-spacing: 0.15rem;
+  line-height: 2rem;
   width: 100%;
   text-align: center;
   background-color: #eeeeee;
